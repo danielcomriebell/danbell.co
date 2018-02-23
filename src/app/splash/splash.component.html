@@ -1,0 +1,16 @@
+<div class="splash-container">
+  <div class="splash-content">
+    <span [ngClass]="{'remove-blur':blurEvent}" >Website Coming Soon</span>
+    <!-- <span [ngClass]="{'remove-blur':blurEvent}" >Website Coming Soon</span>
+    <span [ngClass]="{'remove-blur':blurEvent}" >Website Coming Soon</span> -->
+
+  </div>
+
+  <div [ngClass]="{'slide-in':blurEvent}" class="white-rectangle">
+
+  </div>
+
+  <div class="blur-button">
+    <button [ngClass]="{'remove-button':blurEvent}" (click) = "blurEventAction()" type="button" name="button">Click to Reveal</button>
+  </div>
+</div>

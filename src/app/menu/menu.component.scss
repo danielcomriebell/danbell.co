@@ -1,0 +1,107 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.menu{
+  display: block;
+  position: fixed;
+  // height: 50px;
+  z-index:26;
+  // width: 100vw;
+  width: 65px;
+  height: 65px;
+  left: 15px;
+  top: 15px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(0, 0, 0, 0.5);
+  transition: all .2s ease-in;
+  .burger{
+    width: 35px;
+    left: 15px;
+    position: relative;
+    top: 23px;
+  }
+
+  &:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5), 0px 0px 25px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.menu-container{
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  background-color: white;
+  opacity: 0;
+  z-index: 25;
+  // transform: translateY(100vh);
+  // visibility: hidden;
+  transition: all .4s ease-in;
+  ul{
+    width: auto;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    li{
+      margin-bottom: 15px;
+    }
+    p{
+      a{
+        text-decoration: none;
+        color: white;
+        font-size: 75px;
+        transition: all .4s linear;
+        letter-spacing: 5px;
+        // color: black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        &:hover{
+          color: black;
+          // box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5), 0px 0px 25px rgba(0, 0, 0, 0.5);
+          // -webkit-text-stroke-width: 1px;
+          // -webkit-text-stroke-color: blue;
+        }
+      }
+    }
+  }
+}
+
+.logo{
+  position: relative;
+  width: 150px;
+  float: right;
+  margin-top: -25px;
+  line-height: 50px;
+}
+
+.init-menu{
+  transform: translateY(0);
+  // visibility:visible;
+  opacity: 1;
+}
+
+.name{
+  position: fixed;
+  font-size: 11px;
+  text-transform: uppercase;
+  // bottom: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: rotate(90deg);
+  left: 5px;
+  letter-spacing: 1px;
+}
+
+.lock{
+  transform: scale(1.05);
+}
+
+.top,.middle,.bottom {
+  transition: all 0.35s linear;
+}
+
+.top.open { transform: translateY(60px) }
+.bottom.open { transform: translateY(-60px) }

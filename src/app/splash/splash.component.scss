@@ -1,0 +1,89 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.splash-container{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  // transform: translateX(-100vw);
+  // @include slideInAnimation(2s);
+  // @include fadeInAnimation(2s);
+  .splash-content{
+    // width: 155px;
+    position: relative;
+    @include transformCenter();
+    color: white;
+    z-index: 2;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-around;
+    span{
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+
+      font-weight: 100;
+      @include fadeInAnimation(5s);
+      line-height: 200px;
+      text-align: center;
+      transition: all 2s ease-in;
+      // filter: blur(5px);
+      // opacity: 0;
+      color: black;
+      z-index: 2;
+    }
+  }
+
+  .blur-button{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    button{
+      -webkit-apperance: none;
+      outline: 0;
+      border: 1px solid white;
+      background-color: transparent;
+      width: 200px;
+      height: 34px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all .4s linear;
+      @include fadeInAnimation(5s);
+      &:hover{
+        background-color:white;
+        color: black;
+      }
+    }
+  }
+}
+
+.white-rectangle{
+  width: 100vw;
+  height: 50vh;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  transform: translate(-100%, -57%);
+  transition: all .8s ease-in;
+}
+
+.slide-in{
+  transform: translate(0%, -57%);
+}
+
+
+.remove-button{
+  // transform: translateY(100vh) !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@include fadein();
+@include slidein();
+
+// left 402ms cubic-bezier(.165,.84,.44,1),opacity 402ms cubic-bezier(.165,.84,.44,1)
