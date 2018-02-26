@@ -13,7 +13,7 @@
   top: 25px;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5), 0px 0px 5px rgba(0, 0, 0, 0.5);
   transition: all .2s ease-in;
   // border: .5px solid black;
   .burger{
@@ -25,7 +25,7 @@
 
   &:hover{
     transform: scale(1.05);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5), 0px 0px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.5);
 
   }
 }
@@ -111,8 +111,8 @@
 
 .lock{
   transform: scale(1.05);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5), 0px 0px 15px rgba(0, 0, 0, 0.5);
-  
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .top,.middle,.bottom {
