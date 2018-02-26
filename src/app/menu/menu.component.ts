@@ -22,6 +22,8 @@ export class MenuComponent implements OnInit {
     },
   ]
 
+  myDate:Date;
+
   constructor() { }
 
   initSlide(){
@@ -30,6 +32,15 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.utcTime();
+  }
+
+
+
+  utcTime():void{
+    setInterval(() => { 
+    this.myDate = new Date();
+  }, 1000);
   }
 
 }

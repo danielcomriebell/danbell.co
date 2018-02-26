@@ -82,6 +82,8 @@ export class HomeComponent implements OnInit {
     },
   ]
 
+  myDate:Date;
+
   constructor() { }
 
   ngOnInit() {
@@ -91,5 +93,13 @@ export class HomeComponent implements OnInit {
     document.getElementsByTagName('body')[0].classList.remove('a-body');
 
   }
+
+  utcTime():void{
+    setInterval(() => { 
+    this.myDate = new Date();
+    console.log(this.myDate);
+  }, 1000);
+  }
+
 
 }
