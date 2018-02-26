@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { ContentfulService } from '../contentful.service';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-home',
@@ -6,96 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  homeImages:Array<any> = [
-    {
-      "title":'../assets/amanda.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/3.png',
-      "url":'home'
-    },
-    {
-      "title":'../assets/2.png',
-      "url":'about'
-    },
-    {
-      "title":'../assets/300ent.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/capture.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/rose.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/1.png',
-      "url":'rates'
-    },
-    {
-      "title":'../assets/staple3.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/angel.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/fearofgod.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/25.png',
-      "url":'contact'
-    },
-    // {
-    //   "title":'../assets/FCSFINAL.jpg',
-    //   "url":'contact'
-    // },
-    // {
-    //   "title":'../assets/db8.jpg',
-    //   "url":'contact'
-    // },
-    {
-      "title":'../assets/6.png',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/blah1.JPG',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/blah.JPG',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/pollyaart.jpg',
-      "url":'contact'
-    },
-    {
-      "title":'../assets/4.jpg',
-      "url":'contact'
-    },
-  ]
-
   myDate:Date;
-
-  constructor() { }
+  private projects: Entry<any>[] = [];
+  constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
-    // e.preventDefault();
-    // console.log(document.getElementsByTagName('html')[0].classList.remove('a-html'));
     document.getElementsByTagName('html')[0].classList.remove('a-html');
     document.getElementsByTagName('body')[0].classList.remove('a-body');
-
+    this.contentfulService.getProjects().then(projects => this.projects = projects);
   }
 
   utcTime():void{
-    setInterval(() => { 
+    setInterval(() => {
     this.myDate = new Date();
     console.log(this.myDate);
   }, 1000);

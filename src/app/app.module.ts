@@ -10,6 +10,10 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import { SplashComponent } from './splash/splash.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ContentfulService } from './contentful.service';
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
@@ -33,7 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       {path: '', redirectTo:'home', pathMatch:'full'},
     ])
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [ContentfulService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
