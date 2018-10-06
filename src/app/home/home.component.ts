@@ -17,6 +17,11 @@ export class HomeComponent implements OnInit {
     document.getElementsByTagName('html')[0].classList.remove('a-html');
     document.getElementsByTagName('body')[0].classList.remove('a-body');
     this.contentfulService.getProjects().then(projects => this.projects = projects);
+    // console.log(this.projects);
+  }
+
+  show(){
+    console.log(this.projects);
   }
 
   utcTime():void{

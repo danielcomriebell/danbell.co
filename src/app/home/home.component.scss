@@ -9,18 +9,19 @@
   position: relative;
   top: 100px;
   @include fadeInAnimation(2s);
-  img{
+  a{
     width: 25%;
     margin-bottom: 150px;
-    transition: all .4s linear;
-    // filter:blur(10px);
-    &:hover{
-      // 0px 0px 20px rgba(0, 0, 0, 0.4), 0px 0px 20px rgba(0, 0, 0, 0.5)
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4), 0px 0px 20px rgba(0, 0, 0, 0.5);
-    }
-
+    // transition: all .4s linear;
     @include respond-to(phone){
       width: 50%;
+    }
+  }
+  img{
+    width: 100%;
+    transition: all .4s linear;
+    &:hover{
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4), 0px 0px 20px rgba(0, 0, 0, 0.5);
     }
   }
 }

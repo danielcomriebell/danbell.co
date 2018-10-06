@@ -34,11 +34,9 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.utcTime();
   }
-
-
-
+  
   utcTime():void{
-    setInterval(() => { 
+    setInterval(() => {
     this.myDate = new Date();
   }, 1000);
   }

@@ -12,6 +12,7 @@ import { SplashComponent } from './splash/splash.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentfulService } from './contentful.service';
+import { ProjectsDetailComponent } from './projects-detail/projects-detail.component';
 
 
 
@@ -23,7 +24,8 @@ import { ContentfulService } from './contentful.service';
     ProjectsComponent,
     ContactComponent,
     MenuComponent,
-    SplashComponent
+    SplashComponent,
+    ProjectsDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +36,10 @@ import { ContentfulService } from './contentful.service';
       {path: 'about', component: AboutComponent},
       // {path: 'contact', component: ContactComponent},
       {path: 'projects', component: ProjectsComponent},
+      {path: 'home/:id', component: ProjectsDetailComponent},
+
       // {path: 'splash', component: SplashComponent},
-      {path: '', redirectTo:'home', pathMatch:'full'},
+      {path: '', redirectTo:'projects', pathMatch:'full'},
     ])
   ],
   providers: [ContentfulService, {provide: LocationStrategy, useClass: HashLocationStrategy}],

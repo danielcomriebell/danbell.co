@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngFor="let project of projects">
+
+    <div class="cover-image">
+      <img src="{{project.fields.websiteDetailImage.fields.file.url}}" alt="">
+    </div>
+
+    <div class="content">
+      <p><b>{{project.fields.projectname}}</b></p>
+      <p>{{project.fields.description}}</p>
+      <div class="visit-button">
+        <a href="{{project.fields.websiteUrl}}">Explore</a>
+      </div>
+      <div class="back-button">
+        <a routerLink="/home">Back</a>
+      </div>
+    </div>
+  </div>
+</div>
